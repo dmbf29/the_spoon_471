@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h1>Restaurants</h1>
+    <%= link_to '+', new_restaurant_path, class: 'btn btn-light' %>
+  </div>
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-12 col-sm-4">
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2><%= link_to restaurant.name.titleize, restaurant_path(restaurant) %></h2>
+            <p><%= '⭐️' * restaurant.stars %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

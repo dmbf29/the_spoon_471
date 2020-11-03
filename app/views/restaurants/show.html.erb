@@ -1,0 +1,6 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <p><%= '⭐️' * @restaurant.stars %></p>
+  <%= link_to '🏠', restaurants_path, class: 'btn btn-info' %>
+  <%= link_to '🗑', restaurant_path(@restaurant), method: :delete, data: { confirm: "Delete #{@restaurant.name}?" } %>
+</div>
